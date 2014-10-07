@@ -1,0 +1,24 @@
+#######################################
+# Syntax Coloring Map For HYT221
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+HYT221             KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin            KEYWORD2
+read            KEYWORD2
+getRawHumidity        KEYWORD2
+getRawTemperature    KEYWORD2
+getHumidity        KEYWORD2
+getTemperature        KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
