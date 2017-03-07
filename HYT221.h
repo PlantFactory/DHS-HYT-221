@@ -14,7 +14,7 @@ class HYT221 {
         int address;
         int rawTemp;
         int rawHum;
-        
+
     public:
         HYT221(int I2Cadr);
         uint8_t begin( void );
@@ -24,10 +24,8 @@ class HYT221 {
         int getRawTemperature( void ) ;
         double getHumidity( void ) ;
         double getTemperature( void );
-    
-};
 
-extern HYT221 HYT;
+};
 
 
 #endif

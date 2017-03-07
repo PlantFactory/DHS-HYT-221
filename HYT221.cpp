@@ -15,7 +15,7 @@
 #define HUM_SCALE 100.0
 
 //
-// HYT221 
+// HYT221
 //
 // !!! Blocking code
 //
@@ -33,15 +33,15 @@ uint8_t HYT221::read( void ) {
     Wire.write((byte)0x00);
     Wire.available();
     int Ack = Wire.read(); // receive a byte
-    
+
     // DEBUG
     #if HYT_DEBUG
         Serial.print("ACK: ");
         Serial.println(Ack);
     #endif
-    
+
     Wire.endTransmission();
-    
+
     // DEBUG ////////////////
     //request 4 bytes
     #if HYT_DEBUG
@@ -55,7 +55,7 @@ uint8_t HYT221::read( void ) {
         int a4 = Wire.read(); // receive a byte
     #endif
     ////////////////////////////////
-    
+
     // delay inteval !!! blocking MCU
     delay(100);
 
@@ -68,7 +68,7 @@ uint8_t HYT221::read( void ) {
     int b2 = Wire.read(); // receive a byte
     int b3 = Wire.read(); // receive a byte
     int b4 = Wire.read(); // receive a byte
-    
+
     // DEBUG
     #if HYT_DEBUG
         Serial.print("a1: ");
@@ -88,14 +88,14 @@ uint8_t HYT221::read( void ) {
         Serial.print("b4: ");
         Serial.println(b4, BIN);
     #endif
-    
+
 
     // combine the bits
     rawHum = ( b1 << 8 | b2 ) & 0x3FFF;
 
     // Mask away 2 last bits see HYT 221 doc
     rawTemp = b3 << 6 | ( unsigned(b4) >> 2 ) ;
-    
+
     return 1;
 }
 
