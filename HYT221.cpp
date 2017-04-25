@@ -107,11 +107,11 @@ int HYT221::getRawTemperature( void ) {
     return rawTemp;
 }
 
-double HYT221::getHumidity( void ) {
+float HYT221::getHumidity( void ) {
     //hum = 100.0 / pow( 2, 14 ) * rawHum;
     return (HUM_SCALE * rawHum) / SCALE_MAX;
 }
 
-double HYT221::getTemperature( void ) {
+float HYT221::getTemperature( void ) {
     return ( (TEMP_SCALE * rawTemp) / SCALE_MAX ) - TEMP_OFFSET;
 }

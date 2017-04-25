@@ -22,8 +22,8 @@ class HYT221 {
 
         int getRawHumidity( void );
         int getRawTemperature( void ) ;
-        double getHumidity( void ) ;
-        double getTemperature( void );
+        float getHumidity( void ) ;
+        float getTemperature( void );
 
 };
 
